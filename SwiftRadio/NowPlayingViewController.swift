@@ -9,6 +9,7 @@
 import UIKit
 import MediaPlayer
 import AVKit
+import RealmSwift
 
 
 //*****************************************************************
@@ -173,24 +174,24 @@ class NowPlayingViewController: UIViewController {
         currentStation = station
         currentTrack = track
         newStation = isNewStation
-    }
+  }
+  
+  func updateTrackMetadata(with track: Track?) {
+    guard let track = track else { return }
     
-    func updateTrackMetadata(with track: Track?) {
-        guard let track = track else { return }
-        
-        currentTrack.artist = track.artist
-        currentTrack.title = track.title
-        
-        updateLabels()
-    }
+    currentTrack.artist = track.artist
+    currentTrack.title = track.title
     
-    // Update track with new artwork
-    func updateTrackArtwork(with track: Track?) {
-        guard let track = track else { return }
-        
-        // Update track struct
-        currentTrack.artworkImage = track.artworkImage
-        currentTrack.artworkLoaded = track.artworkLoaded
+    updateLabels()
+  }
+  
+  // Update track with new artwork
+  func updateTrackArtwork(with track: Track?) {
+    guard let track = track else { return }
+    
+    // Update track struct
+    currentTrack.artworkImage = track.artworkImage
+    currentTrack.artworkLoaded = track.artworkLoaded
         
         albumImageView.image = currentTrack.artworkImage
         
@@ -275,7 +276,8 @@ class NowPlayingViewController: UIViewController {
         guard let statusMessage = statusMessage else {
             // Radio is (hopefully) streaming properly
             songLabel.text = currentTrack.title
-            artistLabel.text = currentTrack.artist
+          artistLabel.text = currentTrack.artist
+          
             shouldAnimateSongLabel(animate)
             return
         }

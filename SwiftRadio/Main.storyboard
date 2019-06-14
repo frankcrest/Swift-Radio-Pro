@@ -135,7 +135,7 @@
                     <navigationItem key="navigationItem" title="Swift Radio" id="OKR-cw-CyI">
                         <barButtonItem key="leftBarButtonItem" image="icon-hamburger" id="CEi-nw-1dN">
                             <connections>
-                                <segue destination="61j-j7-6ve" kind="presentation" identifier="ShowMenu" id="MJP-ZO-92b"/>
+                                <segue destination="61j-j7-6ve" kind="show" identifier="ShowMenu" id="MJP-ZO-92b"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -161,130 +161,31 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="GpH-v2-Q95" userLabel="Background Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K6v-dQ-Ces" userLabel="Pop-up View">
-                                <rect key="frame" x="82" y="265" width="250" height="206"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4YL-N4-xkC" userLabel="Close Button">
-                                        <rect key="frame" x="8" y="8" width="16" height="16"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="16" id="Fwj-Pc-cZx"/>
-                                            <constraint firstAttribute="width" constant="16" id="zOq-pb-kph"/>
-                                        </constraints>
-                                        <color key="tintColor" red="0.20579981803894043" green="0.49201503396034241" blue="0.70883911848068237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" image="btn-close"/>
-                                        <connections>
-                                            <action selector="closeButtonPressed" destination="61j-j7-6ve" eventType="touchUpInside" id="i59-HZ-ayG"/>
-                                        </connections>
-                                    </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7mN-C5-TQp">
-                                        <rect key="frame" x="27" y="27.333333333333314" width="196.33333333333334" height="164.66666666666666"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swift-radio-black" translatesAutoresizingMaskIntoConstraints="NO" id="6p5-La-eLs" customClass="SpringImageView" customModule="SwiftRadio" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="0.0" width="180" height="70"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="zoomIn"/>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                                        <real key="value" value="0.29999999999999999"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSU-lN-ktR">
-                                                <rect key="frame" x="12" y="80" width="172" height="32"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Be5-hL-qtx" customClass="SpringButton" customModule="SwiftRadio" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="86" height="32"/>
-                                                        <color key="backgroundColor" red="0.24706900119781494" green="0.56329798698425293" blue="0.81052231788635254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="32" id="otZ-mF-Bce"/>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="86" id="qbR-b5-GDF"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="About">
-                                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideRight"/>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                                                <real key="value" value="0.59999999999999998"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="damping">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <segue destination="XU1-sh-p0s" kind="presentation" id="2md-Am-VN1"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDa-S4-n0n" customClass="SpringButton" customModule="SwiftRadio" customModuleProvider="target">
-                                                        <rect key="frame" x="86" y="0.0" width="86" height="32"/>
-                                                        <color key="backgroundColor" red="0.20579981803894043" green="0.49201503396034241" blue="0.70883911848068237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="32" id="TH4-oX-IOh"/>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="86" id="lC5-vy-gFK"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="Website">
-                                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideLeft"/>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                                                <real key="value" value="0.59999999999999998"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="damping">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="websiteButtonPressed:" destination="61j-j7-6ve" eventType="touchUpInside" id="0oo-aK-VC7"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Source Project" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWZ-je-blg">
-                                                <rect key="frame" x="31.333333333333343" y="122" width="133.66666666666666" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matt Fecher &amp; Fethi El Hassasna" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYi-2l-6dj" userLabel="Matthew Fecher &amp; Fethi El Hassasna">
-                                                <rect key="frame" x="0.0" y="149" width="196.33333333333334" height="15.666666666666657"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="4YL-N4-xkC" firstAttribute="top" secondItem="K6v-dQ-Ces" secondAttribute="top" constant="8" id="EP4-Qc-tOn"/>
-                                    <constraint firstItem="4YL-N4-xkC" firstAttribute="leading" secondItem="K6v-dQ-Ces" secondAttribute="leading" constant="8" id="LJH-vM-Cww"/>
-                                    <constraint firstAttribute="bottom" secondItem="7mN-C5-TQp" secondAttribute="bottom" constant="14" id="Umj-Ey-MiX"/>
-                                    <constraint firstItem="7mN-C5-TQp" firstAttribute="centerX" secondItem="K6v-dQ-Ces" secondAttribute="centerX" id="cru-rn-YaR"/>
-                                    <constraint firstAttribute="width" constant="250" id="fgN-uQ-6Dx"/>
-                                    <constraint firstAttribute="height" constant="206" id="grb-dB-tzx"/>
-                                </constraints>
-                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vYH-fX-5Ho">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="61j-j7-6ve" id="6uE-jB-6mg"/>
+                                    <outlet property="delegate" destination="61j-j7-6ve" id="QFp-mL-15g"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Ogy-0t-iKH" firstAttribute="trailing" secondItem="GpH-v2-Q95" secondAttribute="trailing" id="2ZC-Gw-pfb"/>
+                            <constraint firstItem="vYH-fX-5Ho" firstAttribute="leading" secondItem="Ogy-0t-iKH" secondAttribute="leading" id="3oA-ne-3kA"/>
                             <constraint firstItem="GpH-v2-Q95" firstAttribute="leading" secondItem="Ogy-0t-iKH" secondAttribute="leading" id="5h5-Vc-Qn3"/>
-                            <constraint firstAttribute="centerY" secondItem="K6v-dQ-Ces" secondAttribute="centerY" id="Bje-b4-6zD"/>
+                            <constraint firstItem="vYH-fX-5Ho" firstAttribute="top" secondItem="Ogy-0t-iKH" secondAttribute="top" id="8tb-7x-vff"/>
+                            <constraint firstItem="Ogy-0t-iKH" firstAttribute="trailing" secondItem="vYH-fX-5Ho" secondAttribute="trailing" id="BUe-Da-LdX"/>
                             <constraint firstItem="GpH-v2-Q95" firstAttribute="top" secondItem="OfZ-BE-wMy" secondAttribute="top" id="RN4-ZB-lbp"/>
-                            <constraint firstItem="Ogy-0t-iKH" firstAttribute="centerX" secondItem="K6v-dQ-Ces" secondAttribute="centerX" id="rSF-5v-a7F"/>
+                            <constraint firstItem="Ogy-0t-iKH" firstAttribute="bottom" secondItem="vYH-fX-5Ho" secondAttribute="bottom" id="rJr-U2-IVn"/>
                             <constraint firstAttribute="bottom" secondItem="GpH-v2-Q95" secondAttribute="bottom" id="xS9-r4-beH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ogy-0t-iKH"/>
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="GpH-v2-Q95" id="1HK-ui-e7J"/>
-                        <outlet property="popupView" destination="K6v-dQ-Ces" id="7au-Js-ODA"/>
+                        <outlet property="trackTableView" destination="vYH-fX-5Ho" id="ph1-wz-64J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zrd-1T-mPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -798,7 +699,6 @@
     <resources>
         <image name="NowPlayingBars" width="19.666666030883789" height="19"/>
         <image name="background" width="320" height="568"/>
-        <image name="btn-close" width="22.666666030883789" height="22.666666030883789"/>
         <image name="btn-next" width="44" height="44"/>
         <image name="btn-pause" width="44" height="44"/>
         <image name="btn-play" width="44" height="44"/>
@@ -808,11 +708,7 @@
         <image name="logo" width="60" height="23.666666030883789"/>
         <image name="share" width="32" height="32"/>
         <image name="stationImage" width="120" height="75"/>
-        <image name="swift-radio-black" width="180" height="70"/>
         <image name="vol-max" width="16.666666030883789" height="14"/>
         <image name="vol-min" width="11" height="12.666666984558105"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Z22-bU-Ytg"/>
-    </inferredMetricsTieBreakers>
 </document>

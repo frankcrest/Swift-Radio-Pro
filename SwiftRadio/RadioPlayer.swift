@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 //*****************************************************************
 // RadioPlayerDelegate: Sends FRadioPlayer and Station/Track events
@@ -119,6 +120,16 @@ extension RadioPlayer: FRadioPlayerDelegate {
                 resetTrack(with: station)
                 return
         }
+      
+      let newTrack = TrackRealm()
+      newTrack.title = trackName
+      newTrack.artist = artistName
+      print(newTrack)
+      let realm = try! Realm()
+      
+      try! realm.write{
+        realm.add(newTrack)
+      }
         
         updateTrackMetadata(artistName: artistName, trackName: trackName)
     }
