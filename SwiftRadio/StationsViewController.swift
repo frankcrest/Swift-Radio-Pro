@@ -53,11 +53,6 @@ class StationsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-      let realm = try! Realm()
-      try! realm.write {
-        realm.deleteAll()
-      }
         
         // Register 'Nothing Found' cell xib
         let cellNib = UINib(nibName: "NothingFoundCell", bundle: nil)
